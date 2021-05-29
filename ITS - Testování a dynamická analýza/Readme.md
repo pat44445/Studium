@@ -3,7 +3,7 @@
 Projekty do předmětu Testování a dynamická analýza 4. semestr, léto
 
 ### Projekt 1 
-	Definice testovacích scénářů pro instanci eCommerce platformy OpenCart.
+Definice testovacích scénářů pro instanci eCommerce platformy OpenCart.
 
 ### Projekt 2
-	Samotná implementace testů (Python)
+Samotná implementace testů (Python)

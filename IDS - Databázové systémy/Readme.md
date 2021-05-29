@@ -1,6 +1,6 @@
 # VUT FIT IDS
 
-Projekty do předmětu Databázové systémy
+Projekty do předmětu Databázové systémy, 4. semestr, léto
 
 
 #### Projekt je rozdělen na několik částí

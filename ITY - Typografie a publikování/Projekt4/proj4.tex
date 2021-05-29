@@ -1,0 +1,84 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[czech]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,text={17cm, 24cm},top=2.5cm]{geometry}
+
+\usepackage{times}
+
+
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks=true,hypertexnames=false}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+\renewcommand{\baselinestretch}{1.5}\normalsize
+{\Huge {FAKULTA INFORMAČNÍCH TECHNOLOGIÍ \\ VYSOKÉ UČENÍ TECHNICKÉ V BRNĚ}}\\
+\vspace{\stretch{0.382}}
+{\LARGE Typografie~a publikování – 4. projekt \\
+\medskip {\Huge Bibliografické citace}}
+\\
+\vspace{\stretch{0.618}}
+\end{center}
+
+{\LARGE \today \hfill Tomáš Dvořáček (xdvora3d)}
+
+
+\end{titlepage}
+
+\section{\LaTeX}
+
+\LaTeX\space je propracovaný sázecí systém, který nám umožňuje vytvářet různé články, odborné texty apod. ve vysoké typografické kvalitě. Používá k tomu příkazy vlastní, ale také nespočet různých balíků, např. pro práci~s obrázky či tabulkami.
+Pokud jste začátečník, s \LaTeX em vám může pomoci třeba \cite{Stefan}
+
+\subsection{Začínáme sázet}
+Mezi základní pojmy jejichž znalost je nutná pro práci~a tvorbu zdrojových textů patří
+\begin{itemize}
+    \item Hladká sazba
+    \item Smíšená sazba
+    \item Sazba odstavců
+    \item Členění dokumentu
+    \item Úprava publikací
+\end{itemize}
+
+\noindent jak pojednává publikace \cite{Rybicka}
+
+\subsection{Výhody a nevýhody \LaTeX u}
+Tak jako snad každá věc, tak~i \LaTeX\space má své silné~a slabé stránky. Mezi jeho nesporně silné stránky patří zejména sazba matematických výrazů, viz \cite{Kalvoda} či velká přesnost a preciznost.
+Mezi slabé stránky \LaTeX u bych zařadil zejména tvorbu tabulek, která není úplně příjemná, ale~s tím vám pomůže třeba \cite{Sopuch}. \LaTeX\space také není nějak extrémně rozšířený~a na mnoha počítačích ho budete hledat marně - v takových případech doporučuji použít nějaký online editor, např. Overleaf.
+\par Pokud však máte rádi MS Word, ale zároveň chcete nějakým způsobem pracovat s \LaTeX em, pak vězte, že existují nástroje pro převod. Této problematice se věnuje \cite{Simek}
+
+\subsection{Instalace}
+Pokud chcete \LaTeX\space nainstalovat na váš počítač, můžete tak udělat pomocí distribuce Miktex. Můžete se rozhodnout pro dva způsoby instalace: buď instalaci basic Miktex system nebo complete Miktex system, podrobný popis viz \cite{Bojko}
+
+\subsection{Překlad zdrojového souboru}
+Pozornější~z vás si možná pokládají otázku: Jak získám výsledný dokument ze zdrojového souboru?
+K tomuto existuje mnoho různých programů, které toto dělají. Stručný výtah naleznete zde \cite{Martinek}
+
+\subsection{Trocha exotiky}
+Věřte tomu nebo ne, v \LaTeX u se dá sázet třeba i čínsky nebo japonsky. Toto~a návod na výrobu písma khandži, integraci čínských glyfů + další zájímavosti si můžete přečíst v časopise \cite{Casopis}
+
+\section{Pár zajímavostí o černých dírách}
+V nedávné době se podařil opravdový průlom ve výzkumu černých děr a tím je první snímek černé díry z galaxie Messier. Co je na vyfocení černé díry tak těžkého? \space Černé díry patří do oblasti, která je pro běžná pozorování nedostupná a i seriozní vědecké práce o nich se z velké části zakládají na spekulacích \cite{Curiel}.
+\par Nejzajímavější částí černé díry je její střed, kde vládne tak silná gravitace, že zakřivení časoprostoru se stane nekonečným. Předpokládá se, že časoprostor vyústí v jakýsi zubatý okraj, za nímž již neexistuje fyzika - Singularita \cite{asthtekar}.\\Zajímavé~že?
+
+\newpage
+\bibliographystyle{czechiso}
+\renewcommand{\refname}{Citace}
+\bibliography{proj4}
+
+
+
+
+
+
+
+
+
+
+\end{document}

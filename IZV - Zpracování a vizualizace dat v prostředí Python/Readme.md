@@ -9,4 +9,4 @@ Projekty do předmětu Zpracování a vizualizace dat v prostředí Python, 5. s
 2. [Základní analýza dat](./Projekt_part2/)
    * Cílem je implementovat základní analýzu dat(​Statistika nehodovosti​ Policie ČR), která máme stažena a předzpracována.
 3. [Celkové řešení](./Projekt_part2/)
-   * Cílem je analyzovat a vizualizovat data (​Statistika nehodovosti​ Policie ČR), která máme již stažena a předzpracována zminulých částí.
+   * Cílem je analyzovat a vizualizovat data (​Statistika nehodovosti​ Policie ČR), která máme již stažena a předzpracována z minulých částí.

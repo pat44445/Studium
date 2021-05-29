@@ -1,6 +1,6 @@
 # VUT FIT IMS
 
-Projekty do předmětu Modelování a simulace, 5. semestr, zima
+Projekt do předmětu Modelování a simulace, 5. semestr, zima
 
 ### Týmový projekt
 Epidemiologický model pomocí celulárních automatů

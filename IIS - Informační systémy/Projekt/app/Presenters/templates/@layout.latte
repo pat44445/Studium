@@ -1,0 +1,104 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+
+{import 'components/form.latte'}
+
+<!DOCTYPE html>
+<html>
+<head>
+	{block head}
+	<meta charset="utf-8">
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Elektronická zdravotní knížka</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+	{/block}
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark navbar-custom">
+		<a class="navbar-brand" href="/">
+			<img n:class="$presenter->isLinkCurrent('Homepage:*') ? logo-active : logo" src="/logo.png" alt="logo">
+		</a>
+		{if $user->isLoggedIn() == True}
+			<ul class="nav navbar-nav mr-auto">
+					<li class="nav-item">
+						{if $isAdmin or $isDoctor or $isPatient}
+							<a n:class="$presenter->isLinkCurrent('HealthProblem:*') ? active, nav-link : nav-link" n:href="HealthProblem:list">Zdravotní problémy</a>
+						{/if}
+					</li>
+					<li class="nav-item">
+						{if $isAdmin or $isInsuranceWorker}
+							<a n:class="$presenter->isLinkCurrent('Procedure:*') ? active, nav-link : nav-link"  n:href="Procedure:list">Hrazené úkony</a>
+						{/if}
+					</li>
+					<li class="nav-item">
+						{if $isAdmin or $isInsuranceWorker}
+							<a n:class="$presenter->isLinkCurrent('ProcedureRequest:*') ? active, nav-link : nav-link"  n:href="ProcedureRequest:list">Žádosti o proplacení úkonů</a>
+						{/if}
+					</li>
+					<li class="nav-item">
+						{if $isAdmin or $isDoctor}
+							<a n:class="$presenter->isLinkCurrent('Examination:*') ? active, nav-link : nav-link"  n:href="Examination:my">Moje žádosti vyšetření</a>
+						{/if}
+					</li>
+					<li class="nav-item">
+							{if $isAdmin}
+								<a n:class="$presenter->isLinkCurrent('User:*') ? active, nav-link : nav-link"  n:href="User:list">Uživatelé</a>
+							{/if}
+					</li>
+			</ul>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+						<a n:class="$presenter->isLinkCurrent('User:profile') ? active, nav-link : nav-link" n:href="User:profile">Můj profil</a>
+				</li>
+				<li class="nav-item">
+						<a class="nav-link" n:href="Sign:out">Odhlásit ({$user->getIdentity()->Full_name})</a>
+				</li>
+			</ul>
+		{else}
+			<ul class="nav navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link active" href="/">Elektronická zdravotní knížka</a>
+				</li>
+			</ul>
+
+		{/if}
+		
+	</nav>
+
+	<div class="container">
+		<div n:foreach="$flashes as $flash" n:class="alert, 'alert-' . $flash->type">{$flash->message}</div>
+		{include content}
+	</div>
+
+	<footer class="footer">
+		<hr>
+		<div>
+			<p>Elektronická zdravotní knížka</p>
+		</div>
+	</footer>
+
+	{block scripts}
+		<script>
+			$(".nav a").on("click", function() {
+				$(".nav").find(".active").removeClass("active");
+				$(this).parent().addClass("active");
+			});
+		</script>
+		<script>
+			var dt = new Date();
+			document.getElementById("time").innerHTML = "Dnes je " + (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+		</script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+		<script src="{$basePath}/js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	{/block}
+</body>
+</html>

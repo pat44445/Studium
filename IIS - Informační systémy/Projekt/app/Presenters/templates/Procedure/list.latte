@@ -1,0 +1,26 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Hrazené úkony</h2>
+            <a class="button-edit" type="add" class="user-administration" n:href="Procedure:create">Vytvořit</a>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-custom">
+                    <th>Jméno</th>
+                    <th>Cena</th>
+                    <th colspan="2" style="text-align: center">Akce</th>
+                </thead>
+                <tbody>
+                <tr n:foreach="$procedures as $procedure">
+                    <td>{$procedure['name']}</td>
+                    <td>{$procedure['price']}</td>
+                    <td><a n:href="Procedure:delete procedureId=>$procedure['id']">smazat</a></td>
+                    <td><a n:href="Procedure:edit procedureId=>$procedure['id']">editovat</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,34 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Žádosti o vyšetření pro {$healthProblem->Name} (Pacient {$healthProblem->patient->Full_name})</h2>
+        </div>
+        <div class="list-header">
+            <a class="button-edit" type="create" n:href="Examination:create healthProblemId=>$healthProblem->id">Vytvořit</a>
+            <a class="button-edit" type="back" n:href="HealthProblem:list">zpět</a>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-custom">
+                    <th>Datum</th>
+                    <th>Text</th>
+                    <th>Stav</th>
+                    <th>Přiřazeno lékaři</th>
+                    <th colspan="2" style="text-align:center">Akce</th>
+                <thead>
+                <tbody>
+                    <tr n:foreach="$examinations as $examination">
+                        <td>{$examination['datetime']|truncate:18,''}</td>
+                        <td>{$examination['text']}</td>
+                        <td>{$examination['state']}</td>
+                        <td>{$examination['doctorName']}</td>
+
+                        <td><a n:href="Examination:delete healthProblemId=>$healthProblemId, examinationId=>$examination['id']">smazat</a></td>
+                        <td><a n:href="Examination:edit healthProblemId=>$healthProblemId, examinationId=>$examination['id']">editovat</a></td>
+                    </tr>
+                <tbody>
+            </table>
+        </div>
+    </div>
+{/block}

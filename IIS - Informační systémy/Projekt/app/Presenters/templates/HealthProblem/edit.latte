@@ -1,0 +1,38 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Upravit zdravotní problém</h2>
+            <a class="button-edit" type="edit" n:href="HealthProblem:list">zpět</a>
+        </div>
+        <hr>
+        <div>
+            <p style="color: red">Položky označené * jsou povinné</p>
+            {form form}
+                <table>
+                <tr n:foreach="$form->controls as $name => $field">
+                    {if $name != 'submit'}
+                        {if $name == "name"}
+                            <th>{label $name /} *<th>
+                        {else}
+                            <th>{label $name /}<th>
+                        {/if}
+                        <td>{input $name}</td>
+                    {/if}
+                    <td n:ifcontent>{inputError $name}</td>
+                </tr>
+                <tr n:foreach="$form->controls as $name => $field">
+                    {if $name == 'submit'}
+                        {if $name == "name"}
+                            <th>{label $name /} *<th>
+                        {else}
+                            <th>{label $name /}<th>
+                        {/if}
+                        <td>{input $name}</td>
+                    {/if}
+                    <td n:ifcontent>{inputError $name}</td>
+                </tr>
+                </table>
+            {/form}
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,19 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Detail lékařské zprávy</h2>
+            <a class="button-edit" type="back" n:href="Report:list healthProblemId=>$healthProblemId">zpět</a>
+        </div>
+        <hr>
+        <div class="list-header">
+            <h3>Lékařská zpráva pro {$report->health_problem->Name} (Pacient {$report->health_problem->patient->Full_name}) - č. {$report->id} ze dne {$report->DateTime|truncate:18,''}</h3>
+        </div>
+        <hr>
+        <div>
+            <h4>Text:</h4>
+            <p>{$report->Text}</p>
+            <h4>Obrázek:</h4>
+            <img src="{link Report:image reportId=>$report->id}" alt="">
+        </div>
+    </div>
+{/block}

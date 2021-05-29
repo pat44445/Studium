@@ -1,0 +1,31 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Vymazat uživatele <b>{$userToDelete->Full_name}</b></h2>
+            <a class="button-edit" type="edit" n:href="User:list">zpět</a>
+        </div>
+        <hr>
+        <div>
+
+            <h3>Lékař spravuje tyto záznamy o zdrav. problémech:</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-custom">
+                    <th>Název&nbsp;problému</th>
+                    <th>Jméno</th>
+                    </thead>
+                    <tbody>
+                    <tr n:foreach="$healthProblems as $healthProblem">
+                        <td>{$healthProblem['name']}</td>
+                        <td>{$healthProblem['patientName']}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+            <h3>Po smazání převést na uživatele:</h3>
+            {control deleteForm}
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,26 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Moje žádosti vyšetrení</h2>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped" style="margin-top:20px">
+        <thead class="thead-custom">
+            <th>Text</th>
+            <th>Datum</th>
+            <th>Stav</th>
+            <th>Akce</th>
+        </thead>
+        <tbody>
+            <tr n:foreach="$examinations as $examination">
+                <td>{$examination['text']}</td>
+                <td>{$examination['datetime']|truncate:18,''}</td>
+                <td>{$examination['state']}</td>
+                <td><a n:href="Examination:detail examinationId=>$examination['id']">Detail</td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,29 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Upravit uživatele</h2>
+            {if $backLink}
+                <a class="button-edit" type="edit" n:href="$backLink">zpět</a>
+            {else}
+                <a class="button-edit" type="edit" n:href="User:list">zpět</a>
+            {/if}
+        </div>
+        <hr>
+        <div>
+            <p style="color: red">Položky označené * jsou povinné</p>
+            {form createForm}
+                <table>
+                <tr n:foreach="$form->controls as $name => $field">
+                    {if $name == "username"}
+                        <th>{label $name /} *<th>
+                    {else}
+                        <th>{label $name /}<th>
+                    {/if}
+                    <td>{input $name}</td>
+                    <td n:ifcontent>{inputError $name}</td>
+                </tr>
+                </table>
+            {/form}
+        </div>
+    </div>
+{/block}

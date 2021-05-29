@@ -1,0 +1,25 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Vytvořit novou žádost o vyšetření</h2>
+            <a class="button-edit" type="back" n:href="Report:list healthProblemId=>$healthProblemId">zpět</a>
+        </div>
+        <hr>
+        <div>
+            <p style="color: red">Položky označené * jsou povinné</p>
+            {form form}
+                <table>
+                <tr n:foreach="$form->controls as $name => $field">
+                    {if $name == "text"}
+                        <th>{label $name /} *<th>
+                    {else}
+                        <th>{label $name /}<th>
+                    {/if}
+                    <td>{input $name}</td>
+                    <td n:ifcontent>{inputError $name}</td>
+                </tr>
+                </table>
+            {/form}
+        </div>
+    </div>
+{/block}

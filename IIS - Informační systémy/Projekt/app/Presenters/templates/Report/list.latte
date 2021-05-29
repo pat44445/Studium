@@ -1,0 +1,34 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h3>Lékařské zprávy pro {$healthProblem->Name} (Pacient {$healthProblem->patient->Full_name})</h3>
+        </div>
+        <div class="list-header">
+            {if $isAdmin || $isDoctor}<a class="button-edit" type="create" n:href="Report:create healthProblemId=>$healthProblem->id">Vytvořit</a>{/if}
+            <a class="button-edit" type="back" n:href="HealthProblem:list">zpět</a>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+            <thead class="thead-custom">
+                <th>Název</th>
+                {if $isAdmin || $isDoctor}
+                <th colspan="3" style="text-align: center">Akce</th>
+                {else}
+                    <th style="text-align: center">Akce</th>
+                {/if}
+            </thead>
+            <tbody>
+                <tr n:foreach="$reports as $report">
+                    <td>{$report['subject']}</td>
+                    {if $isAdmin || $isDoctor}
+                    <td><a n:href="Report:delete healthProblemId=>$healthProblemId, reportId=>$report['id']">smazat</a></td>
+                    <td><a n:href="Report:edit healthProblemId=>$healthProblemId, reportId=>$report['id']">editovat</a></td>
+                    {/if}
+                    <td><a n:href="Report:detail healthProblemId=>$healthProblemId, reportId=>$report['id']">detail</a></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+{/block}

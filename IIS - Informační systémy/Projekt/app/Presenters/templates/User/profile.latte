@@ -1,0 +1,22 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Můj profil</h2>
+            <a class="button-edit" type="edit" n:href="User:edit userId=>$currentUser->id, backLink=>'User:profile'">Upravit</a>
+        </div>
+        <hr>
+        <div>
+            <p><b>Celé jméno:</b> {$currentUser->Full_name}</p>
+            <p><b>Uživatelské jméno:</b> {$currentUser->username}</p>
+            <p><b>Role:</b> {$currentUser->role}</p>
+
+            {if $currentUser->Date_of_birth}
+                <p><b>Datum narození:</b> {$currentUser->Date_of_birth->format('j. n. Y')}</p>
+            {/if}
+
+            {if $currentUser->Function}
+                <p><b>Funkce:</b> {$currentUser->Function}</p>
+            {/if}
+        </div>
+    </div>
+{/block}

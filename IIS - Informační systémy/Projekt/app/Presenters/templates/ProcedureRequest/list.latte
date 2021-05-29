@@ -1,0 +1,34 @@
+{block content}
+    <div class="list-content">
+        <div class="list-header">
+            <h2>Žádosti o proplacení úkonú</h2>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped" style="margin-top:20px">
+                <thead class="thead-custom">
+                    <th>Úkon</th>
+                    <th>Doktor</th>
+                    <th>Stav</th>
+                    <th>Částka</th>
+                    <th colspan="2" style="text-align:center">Akce</th>
+                </thead>
+                <tbody>
+                    <tr n:foreach="$procedureRequests as $procedureRequest">
+                        <td>{$procedureRequest['procedureName']}</td>
+                        <td>{$procedureRequest['doctorName']}</td>
+                        <td>{$procedureRequest['state']}</td>
+                        <td>{$procedureRequest['price']}</td>
+
+                        {if $procedureRequest['state'] === 'Zažádáno'}
+                            <td><a n:href="ProcedureRequest:changeState  procedureRequestId=>$procedureRequest['id'], state=>'accepted'">schválit</a></td>
+                            <td><a n:href="ProcedureRequest:changeState  procedureRequestId=>$procedureRequest['id'], state=>'rejected'">zamítnout</a></td>
+                        {else}
+                            <td><td>
+                        {/if}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{/block}

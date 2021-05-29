@@ -6,7 +6,7 @@ Projekty do předmětu Modelování a simulace, 5. semestr, zima
 Epidemiologický model pomocí celulárních automatů
 	
 #### Autoři
-	- Tomáš Dvořáček
-	- Mark A. Menzyńsky
+- Tomáš Dvořáček
+- Mark A. Menzyńsky
 	
 

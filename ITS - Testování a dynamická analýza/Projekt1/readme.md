@@ -50,5 +50,5 @@ Kritériem pro úspěch je, že všechny testovací případy budou úspěšné.
 Testovací prostředí:
 --------------------
 
-Tato instance E-shopu na platformě Opencart je běží na serveru. Název
+Tato instance E-shopu na platformě Opencart běží na serveru. Název
 serveru je *mys01.fit.vutbr.cz*.

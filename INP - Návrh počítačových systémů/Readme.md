@@ -7,4 +7,4 @@ Projekty do předmětu Návrh počítačových systémů na VUT FIT 3. semestr, 
 - Displej 8x8 LED s časovým multiplexem řizený z FPGA pres Xbus
 
 ### Projekt 2
-Procesor na FPGA pro programovací jazyk BrainFuck
+Implementace procesoru vykonávající program v jazyce BrainFuck

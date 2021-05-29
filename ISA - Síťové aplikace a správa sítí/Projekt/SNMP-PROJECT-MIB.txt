@@ -1,0 +1,73 @@
+SNMP-PROJECT-MIB DEFINITIONS ::= BEGIN
+
+--
+-- Example MIB objects for agent module example implementations
+--
+
+IMPORTS
+    MODULE-IDENTITY, OBJECT-TYPE, Integer32, experimental, FROM SNMPv2-SMI
+    MODULE-COMPLIANCE, OBJECT-GROUP          FROM SNMPv2-CONF;
+
+
+MyModule MODULE-IDENTITY
+    LAST-UPDATED "202010120000Z"
+    ORGANIZATION "vut-fit"
+    CONTACT-INFO "email: xdvora3d@stud.fit.vutbr.cz"
+    DESCRIPTION
+	"MIB objects for ISA project"
+
+    ::= { experimental 22 }
+   
+--
+-- structure
+--
+
+MyVariables  OBJECT IDENTIFIER ::= { MyModule }
+
+--
+-- Example scalars
+--
+LoginString OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-only
+    STATUS      current
+    DESCRIPTION
+	"It's only purposes is to hold the value of a single
+	 string.(login)"
+
+    DEFVAL { "xdvora3d" }
+    ::= { MyVariables 1 }
+
+
+--TimeString OBJECT-TYPE
+ --   SYNTAX      DisplayString
+ --   MAX-ACCESS  read-only
+ --   STATUS      current
+ --   DESCRIPTION
+--	"This is actual time in format RFC 3339"
+
+ --   DEFVAL { "" }
+ --   ::= { MyVariables 2 }
+
+--ReadWriteInteger OBJECT-TYPE
+ --   SYNTAX      Integer32
+  --  MAX-ACCESS  read-write
+  --  STATUS      current
+  --  DESCRIPTION
+--	"This is simple read-write integer."
+  --  DEFVAL { 4 }
+  --  ::= { MyVariables 3 }
+
+--OpSysString OBJECT-TYPE
+ --   SYNTAX      DisplayString
+ --   MAX-ACCESS  read-only
+ --   STATUS      current
+ --   DESCRIPTION
+--	"This is name of runing operation system"
+
+ --   DEFVAL { "" }
+ --   ::= { MyVariables 4 }
+
+
+
+END

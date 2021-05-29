@@ -3,7 +3,7 @@
 Projekt do předmětu Síťové aplikace a správa sítí, 5. semestr, zima
 
 ### Projekt  
-	Rozšíření SNMP agenta
+Rozšíření SNMP agenta
 	
 ## Popis zadání
 * Vytvořte komunikující aplikaci podle konkrétní vybrané specifikace pomocí síťové knihovny BSD sockets (pokud není ve variantě zadání uvedeno jinak). Projekt bude vypracován v jazyce C/C++.

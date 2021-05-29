@@ -1,4 +1,4 @@
-# VUT FIT ItY
+# VUT FIT ITY
 
 Projekty do předmětu Typografie a publikování
 
